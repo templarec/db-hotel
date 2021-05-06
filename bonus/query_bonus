@@ -1,0 +1,27 @@
+1)
+SELECT YEAR(date_of_birth) AS 'Anno di nascita', COUNT(date_of_birth) AS 'Numero ospiti'
+FROM ospiti 
+GROUP BY YEAR(date_of_birth);
+
+2)
+SELECT status, SUM(price)
+FROM pagamenti 
+GROUP BY status;
+
+3)
+SELECT stanza_id, COUNT(stanza_id) AS 'Numero prenotazioni per stanza'
+FROM prenotazioni
+GROUP BY stanza_id;
+
+4)
+SELECT HOUR(created_at) AS 'Orario prenotazioni', COUNT(created_at) AS 'Numero Prenotazioni'
+FROM prenotazioni
+GROUP BY HOUR(created_at)
+ORDER BY COUNT(created_at);
+
+5)
+SELECT ospite_id, COUNT(prenotazione_id)
+FROM prenotazioni_has_ospiti
+GROUP BY ospite_id 
+ORDER BY COUNT(prenotazioni_id) DESC;
+

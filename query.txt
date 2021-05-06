@@ -1,0 +1,15 @@
+1. SELECT * FROM ospiti WHERE document_type = 'CI';
+
+2. SELECT * FROM ospiti WHERE date_of_birth > '1987-12-31';
+
+3. SELECT * FROM ospiti WHERE date_of_birth < '2001-05-05';
+
+4. SELECT * FROM ospiti WHERE name LIKE 'D%';
+
+5. SELECT SUM(price) as 'Totale Accettati' FROM pagamenti WHERE status = 'accepted';
+
+6. SELECT * FROM ospiti WHERE document_type = 'driver license' and YEAR(date_of_birth) = '1975';
+
+7. SELECT COUNT(ospite_id) As 'Totale paganti ospiti' FROM paganti WHERE ospite_id <> 'NULL';
+
+2. SELECT SUM(beds) As 'Posti letto totali' FROM stanze;

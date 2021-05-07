@@ -1,0 +1,54 @@
+1)
+
+SELECT ospiti.name, ospiti.lastname, count(prenotazioni_has_ospiti.id) as numero_prenotazioni
+FROM ospiti 
+inner join prenotazioni_has_ospiti on
+prenotazioni_has_ospiti.ospite_id = ospiti.id
+GROUP by ospiti.id
+having numero_prenotazioni > 2
+ORDER by numero_prenotazioni DESC
+
+2)
+
+SELECT prenotazioni_has_ospiti.*, ospiti.name, ospiti.lastname
+FROM ospiti 
+inner join prenotazioni_has_ospiti on
+prenotazioni_has_ospiti.ospite_id = ospiti.id
+
+3)
+
+SELECT paganti.name, paganti.lastname, price 
+FROM pagamenti
+inner join prenotazioni
+on pagamenti.prenotazione_id = prenotazioni.id
+inner join paganti
+on pagamenti.pagante_id = paganti.id
+where YEAR(prenotazioni.created_at) = '2018' AND MONTH(prenotazioni.created_at) = '5'
+
+4)
+
+SELECT SUM(pagamenti.price) FROM prenotazioni
+INNER JOIN pagamenti
+on prenotazioni.id = pagamenti.prenotazione_id
+inner join stanze
+on prenotazioni.stanza_id = stanze.id
+where stanze.floor = 1
+
+5)
+
+SELECT  prenotazioni.id as 'NUMERO PRENOTAZIONE', paganti.name as 'NOME', paganti.lastname as 'COGNOME', paganti.address as 'INDIRIZZO', pagamenti.price as 'PREZZO', pagamenti.created_at as 'DATA FATTURA'
+FROM prenotazioni
+inner join pagamenti
+on prenotazioni.id = pagamenti.prenotazione_id
+inner join paganti
+on pagamenti.pagante_id = paganti.id
+where prenotazioni.id = 7
+
+6)
+
+select stanze.id, COUNT(prenotazioni.stanza_id) as 'Numero_prenotazioni'
+from prenotazioni
+RIGHT join stanze
+on prenotazioni.stanza_id = stanze.id
+GROUP by stanze.id
+HAVING Numero_prenotazioni = 0

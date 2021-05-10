@@ -1,0 +1,25 @@
+{
+  "name": "db-hotel_php",
+  "version": "1.0.0",
+  "description": "db-hotel",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/templarec/db-hotel.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/templarec/db-hotel/issues"
+  },
+  "homepage": "https://github.com/templarec/db-hotel#readme",
+  "devDependencies": {
+    "laravel-mix": "^6.0.19",
+    "sass": "^1.32.12",
+    "sass-loader": "^11.0.1"
+  }
+}

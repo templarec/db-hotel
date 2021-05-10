@@ -16,6 +16,28 @@
 </head>
 <body>
 <div id="root">
+    <div class="lista-stanze">
+            <table>
+                <thead>
+                <tr>
+                    <th>Clicca su una stanza</th>
+                </tr>
+                </thead>
+                <tr v-for="stanza in stanze">
+                    <td @click="getInfo(stanza.id); result = true" :class="[currentSelection === stanza.id ? 'selected' : '']">
+                        {{stanza.room_number}}
+                    </td>
+                </tr>
+            </table>
+        <div class="risultato" v-if="result">
+            <div>Numero stanza: <span>{{currentStanza.room_number}}</span></div>
+            <div>Piano:<span> {{currentStanza.floor}}</span></div>
+            <div>Letti: <span>{{currentStanza.beds}}</span></div>
+            <div>Inserita: <span>{{currentStanza.created_at}}</span></div>
+            <div>Ultimo aggiornamento: <span>{{currentStanza.updated_at}}</span></div>
+
+        </div>
+    </div>
 </div>
 
 <!-- axios -->

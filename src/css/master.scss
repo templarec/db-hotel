@@ -1,0 +1,40 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .lista-stanze {
+    position: relative;
+    table {
+      margin-top: 30px;
+      border-collapse: collapse;
+      td {
+        text-align: center;
+        border: 1px solid #AAAAAA;
+        cursor: pointer;
+        &:hover {
+          background-color: aquamarine;
+        }
+      }
+    }
+  .risultato {
+    position: absolute;
+    border: 1px solid black;
+    left: 100%;
+    top:49px;
+    width: 400px;
+    margin-left: 15px;
+    span {
+      color: #FF0000;
+    }
+  }
+  }
+  .selected {
+    background-color: rgba(255, 0, 0, 0.49);
+  }
+}

@@ -1,1 +1,41 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
 
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#root .lista-stanze {
+  position: relative;
+}
+#root .lista-stanze table {
+  margin-top: 30px;
+  border-collapse: collapse;
+}
+#root .lista-stanze table td {
+  text-align: center;
+  border: 1px solid #AAAAAA;
+  cursor: pointer;
+}
+#root .lista-stanze table td:hover {
+  background-color: aquamarine;
+}
+#root .lista-stanze .risultato {
+  position: absolute;
+  border: 1px solid black;
+  left: 100%;
+  top: 49px;
+  width: 400px;
+  margin-left: 15px;
+}
+#root .lista-stanze .risultato span {
+  color: #FF0000;
+}
+#root .selected {
+  background-color: rgba(255, 0, 0, 0.49);
+}
